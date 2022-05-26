@@ -35,3 +35,20 @@ ul div {
   height: 20px;
   margin: 3px;
 }
+
+button {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.cart {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  padding: 5px;
+  font-size: xx-large;
+  border-radius: 10px;
+  border: 1px solid gray;
+  width: 100px;
+  background-color:lightcyan
+}

@@ -2,6 +2,8 @@ import './App.css';
 import Books from './components/Books'
 import PriceSelector from './components/PriceSelector';
 import { CurrencyProvider } from './hooks/useCurrency';
+import Cart from './components/Cart';
+import { CartProvider } from './hooks/useCart';
 
 const data = [
   { 
@@ -22,13 +24,16 @@ function App() {
 
   return (
     <CurrencyProvider value="US">
-      <div className="App">
-        <header>
-          <PriceSelector />
-        </header>
-        <h1>Book store</h1>
-        <Books books={data} />
-      </div>
+      <CartProvider value={[]}>
+        <div className="App">
+          <header>
+            <PriceSelector />
+            <Cart />
+          </header>
+          <h1>Book store</h1>
+          <Books books={data} />
+        </div>
+      </CartProvider>
     </CurrencyProvider>
   );
 }
