@@ -5,14 +5,16 @@ const CartContext = createContext(null)
 export const CartProvider = ({value, children}) => {
 
     const [ addedItems, setAddedItems] = useState(value)
-    console.log(addedItems)
 
     const addItem = (item) => {
-        console.log("hello")
+        if(addedItems.every(ele => ele.id !== item.id)) {
+            const updatedList = [...addedItems, item];
+            setAddedItems(updatedList)
+        }
     }
 
     const removeItem = (item) => {
-        const updatedCart = value.filter(book => book.id !== item.id)
+        const updatedCart = addedItems.filter(book => book.id !== item.id)
         setAddedItems(updatedCart)
     }
 
