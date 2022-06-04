@@ -1,6 +1,6 @@
 import React from 'react'
 import useCurrency from '../hooks/useCurrency'
-import useCart from '../hooks/useCart'
+import { useCart } from '../hooks/useCart'
 
 export default function Book({book}) {
     const {image, title, price, id } = book

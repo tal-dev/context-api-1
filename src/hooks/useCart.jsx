@@ -25,6 +25,4 @@ export const CartProvider = ({value, children}) => {
     )
 }
 
-const useCart = () => useContext(CartContext)
-
-export default useCart
+export const useCart = () => useContext(CartContext)
