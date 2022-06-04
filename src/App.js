@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import Books from './components/Books'
 import PriceSelector from './components/PriceSelector';
+import { CurrencyProvider } from './hooks/useCurrency';
+import Cart from './components/Cart';
+import { CartProvider } from './hooks/useCart';
 
 const data = [
   { 
@@ -20,20 +23,19 @@ const data = [
 
 function App() {
 
-  const [currency, setCurrency] = useState("US")
-
-  const changeCurrency = () => {
-    setCurrency(currency === "US" ? 'EU' : 'US')
-  }
-
   return (
-    <div className="App">
-      <header>
-        <PriceSelector changeCurrency={changeCurrency}/>
-      </header>
-      <h1>Book store</h1>
-      <Books books={data} currency={currency} />
-    </div>
+    <CurrencyProvider>
+      <CartProvider>
+        <div className="App">
+          <header>
+            <PriceSelector />
+            <Cart/>
+          </header>
+          <h1>Book store</h1>
+          <Books books={data} />
+        </div>
+      </CartProvider>
+    </CurrencyProvider>
   );
 }
 

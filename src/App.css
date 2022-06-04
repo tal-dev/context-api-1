@@ -30,6 +30,16 @@ ul div {
   cursor: pointer;
 }
 
+.cart {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  border: 1px solid lightblue;
+  padding: 10px;
+  width: 100px;
+  background-color: aquamarine;
+}
+
 .price-selector img {
   width: 40px;
   height: 20px;
