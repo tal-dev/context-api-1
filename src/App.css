@@ -35,3 +35,11 @@ ul div {
   height: 20px;
   margin: 3px;
 }
+
+.title {
+  font-size: 20px;
+}
+
+.price {
+  font-weight: 700;
+}
